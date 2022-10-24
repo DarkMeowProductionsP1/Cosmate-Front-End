@@ -60,7 +60,7 @@ const ButtonContainer = styled.div`
 
 const TitleContainer = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 
         
     h1 {
@@ -82,6 +82,7 @@ const SelectContainer = styled.div`
     justify-content: center;
     height: 50px;
     margin-top: 25px;
+    margin-right: 25%;
     background-color: white;
 `
 
