@@ -82,7 +82,7 @@ const SelectContainer = styled.div`
     justify-content: center;
     height: 50px;
     margin-top: 25px;
-
+    background-color: white;
 `
 
 
@@ -135,7 +135,11 @@ const Navbar = () => {
             </TitleContainer>
 
             <SelectContainer>
-                <Select style={{ backgroundColor: "white" }}>
+                <Select selectable="true" style={{ backgroundColor: "white" }}>
+                    <Option value="lucy">lucy</Option>
+                    <Option value="lucy">lucy</Option>
+                    <Option value="lucy">lucy</Option>
+                    <Option value="lucy">lucy</Option>
                     <Option value="lucy">lucy</Option>
                 </Select>
 
