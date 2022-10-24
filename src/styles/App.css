@@ -266,14 +266,28 @@ a:hover {
 }
 
 .menuOverlay {
-    color: white;
+    width: 100px;
+    backdrop-filter: blur(50px);
+    height: 200px;
     width: 200px;
+    border-radius: 10px;
+    padding: 10px;
     z-index: 999;
 }
 
 .menuOverlay a {
-    font-size: 25px;
+    font-size: 45px;
+    font-family: sans-serif;
     color: white;
     text-decoration: none;
-    
+}
+
+.ant-dropdown-menu .ant-dropdown-menu-root .ant-dropdown-menu-vertical .ant-dropdown-menu-light {
+    list-style: none;
+}
+
+.selectDropdown {
+    background-color: white;
+    color: black;
+    z-index: 999;
 }

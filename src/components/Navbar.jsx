@@ -1,5 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { Button, Menu, Typography, Avatar, Dropdown, Space } from 'antd';
+import React, { useState, useRef } from 'react'
+import {
+    Menu,
+    Typography,
+    Avatar,
+    Button,
+    Dropdown,
+    Space,
+    Select,
+    Divider,
+    Input
+} from 'antd';
 import { Link, NavLink } from 'react-router-dom'
 import {
     HomeOutlined,
@@ -11,11 +21,16 @@ import {
     ZhihuOutlined,
     SettingOutlined,
     DownOutlined,
-    SmileOutlined
+    SmileOutlined,
+    PlusCircleFilled,
+    PlusCircleOutlined,
+    VideoCameraAddOutlined,
+    PlusOutlined
 } from '@ant-design/icons'
 import styled from 'styled-components';
 import { Nav, Navlink, Bars, NavBtn, NavBtnLink } from './NavbarElements.js'
 import '../styles/App.css'
+const { Option } = Select;
 
 
 
@@ -26,13 +41,21 @@ const GridContainer = styled.div`
     height: 95px;
     position: relative;
     background-color: #000000;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 220px 100px;
 `
 
 const ButtonContainer = styled.div`
     display: flex;
     margin-top: 8px;  
+    // width: 450px;
+    height: 100%;
     justify-content: flex-start;
+    align-items: center;
+
+    h2 {
+        margin-left: 10px;
+        color: red;
+    }
 `
 
 const TitleContainer = styled.div`
@@ -54,6 +77,14 @@ const NavContainer = styled.div`
     margin-right: 10px;
 `
 
+const SelectContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin-top: 25px;
+
+`
+
 
 const Navbar = () => {
     const menu = (
@@ -65,14 +96,12 @@ const Navbar = () => {
         ]}
         />
     );
-
     return (
         <GridContainer>
 
             <ButtonContainer>
-                <ZhihuOutlined style={{
-                    fontSize: "55px",
-                    boxShadow: "0 0 10px #fff",
+                <PlusCircleOutlined style={{
+                    fontSize: "45px",
                     marginBottom: "15px",
                     marginTop: "5px",
                     marginLeft: "15px",
@@ -84,8 +113,10 @@ const Navbar = () => {
                     borderRadius: "5px"
                 }} />
 
-                <SettingOutlined spin style={{
-                    fontSize: "65px",
+                <h2>Create</h2>
+
+                <VideoCameraAddOutlined style={{
+                    fontSize: "45px",
                     marginBottom: "15px",
                     marginTop: "5px",
                     marginLeft: "15px",
@@ -94,14 +125,24 @@ const Navbar = () => {
                     zIndex: "999",
                     paddingRight: "5px",
                 }} />
+
+                <h2>Live</h2>
+
             </ButtonContainer>
 
             <TitleContainer>
                 <h1>COSMATE</h1>
             </TitleContainer>
 
-            <NavContainer>
+            <SelectContainer>
+                <Select style={{ backgroundColor: "white" }}>
+                    <Option value="lucy">lucy</Option>
+                </Select>
 
+
+            </SelectContainer>
+
+            <NavContainer>
                 <Dropdown
                     overlayClassName="menuOverlay"
                     overlay={menu}
