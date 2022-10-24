@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Menu, Typography, Avatar } from 'antd';
+import { Button, Menu, Typography, Avatar, Dropdown, Space } from 'antd';
 import { Link, NavLink } from 'react-router-dom'
-import { HomeOutlined, BulbOutlined, FundOutlined, MenuOutlined, ContactsOutlined, BellOutlined, ZhihuOutlined, SettingOutlined } from '@ant-design/icons'
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+import {
+    HomeOutlined,
+    BulbOutlined,
+    FundOutlined,
+    MenuOutlined,
+    ContactsOutlined,
+    BellOutlined,
+    ZhihuOutlined,
+    SettingOutlined,
+    DownOutlined,
+    SmileOutlined
+} from '@ant-design/icons'
 import styled from 'styled-components';
 import { Nav, Navlink, Bars, NavBtn, NavBtnLink } from './NavbarElements.js'
 import '../styles/App.css'
@@ -15,8 +25,7 @@ const GridContainer = styled.div`
     z-index:999;
     height: 95px;
     position: relative;
-    background-color: black;
-    border-radius: 15px;
+    background-color: #000000;
     grid-template-columns: 1fr 1fr 1fr;
 `
 
@@ -47,6 +56,16 @@ const NavContainer = styled.div`
 
 
 const Navbar = () => {
+    const menu = (
+        <Menu items={[
+            {
+                label: <a href="/">Home</a>,
+                key: '0',
+            }
+        ]}
+        />
+    );
+
     return (
         <GridContainer>
 
@@ -61,6 +80,7 @@ const Navbar = () => {
                     zIndex: "999",
                     backdropFilter: "blur(50px)",
                     paddingRight: "5px",
+                    cursor: "pointer",
                     borderRadius: "5px"
                 }} />
 
@@ -69,11 +89,11 @@ const Navbar = () => {
                     marginBottom: "15px",
                     marginTop: "5px",
                     marginLeft: "15px",
+                    cursor: "pointer",
                     color: "white",
                     zIndex: "999",
                     paddingRight: "5px",
                 }} />
-
             </ButtonContainer>
 
             <TitleContainer>
@@ -81,7 +101,26 @@ const Navbar = () => {
             </TitleContainer>
 
             <NavContainer>
-                <Menu />
+
+                <Dropdown
+                    overlayClassName="menuOverlay"
+                    overlay={menu}
+                    trigger={['click']}
+                >
+                    <a onClick={(e) => e.preventDefault()}>
+                        <Space>
+                            <MenuOutlined style={{
+                                fontSize: "45px",
+                                marginTop: "20px",
+                                marginRight: "15px",
+                                cursor: "pointer",
+                                color: "white",
+                                zIndex: "999",
+                                paddingRight: "5px",
+                            }} />
+                        </Space>
+                    </a>
+                </Dropdown>
             </NavContainer>
 
         </GridContainer>
