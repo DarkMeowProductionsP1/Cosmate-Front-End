@@ -38,10 +38,11 @@ const GridContainer = styled.div`
     display: grid;
     width: 100vw;
     z-index:999;
+    position: fixed;
     height: 95px;
     position: relative;
     background-color: #000000;
-    grid-template-columns: 1fr 1fr 220px 100px;
+    grid-template-columns: 1fr 1fr 100px;
 `
 
 const ButtonContainer = styled.div`
@@ -61,6 +62,8 @@ const ButtonContainer = styled.div`
 const TitleContainer = styled.div`
     display: flex;
     justify-content: flex-start;
+    margin-left: 20px;
+    margin-top: 5px;
 
         
     h1 {
@@ -135,17 +138,17 @@ const Navbar = () => {
                 <h1>COSMATE</h1>
             </TitleContainer>
 
-            <SelectContainer>
-                <Select selectable="true" style={{ backgroundColor: "white" }}>
+            {/* <SelectContainer>
+                <Select selectable="true">
                     <Option value="lucy">lucy</Option>
-                    <Option value="lucy">lucy</Option>
-                    <Option value="lucy">lucy</Option>
-                    <Option value="lucy">lucy</Option>
-                    <Option value="lucy">lucy</Option>
+                    <Option value="Stacey">Test</Option>
+                    <Option value="Jen">Test</Option>
+                    <Option value="Luna">Test</Option>
+                    <Option value="Rachel">Test</Option>
                 </Select>
 
 
-            </SelectContainer>
+            </SelectContainer> */}
 
             <NavContainer>
                 <Dropdown
