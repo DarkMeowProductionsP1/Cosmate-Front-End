@@ -34,7 +34,7 @@ class Background extends Component {
         <div>...</div>
         <ParticlesBg type="square" num={10} config={config} bg={{
             backgroundColor: "black",
-            position: "absolute"
+            position: "fixed"
             }} />
       </>
     )
