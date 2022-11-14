@@ -7,7 +7,7 @@ class Background extends Component {
       let config = {
           num: [4, 7],
           rps: 0.1,
-          radius: [5, 40],
+          radius: [5, 20],
           life: [1.5, 3],
           v: [1, 1],
           tha: [-40, 40],
@@ -19,7 +19,7 @@ class Background extends Component {
           color: ["random", "#ff0000"],
           cross: "dead", // cross or bround
           random: 15,  // or null,
-          g: 5,    // gravity
+          g: 1,    // gravity
           // f: [2, -1], // force
           onParticleUpdate: (ctx, particle) => {
               ctx.beginPath();
@@ -32,7 +32,7 @@ class Background extends Component {
     return (
       <>
         <div>...</div>
-        <ParticlesBg type="square" num={10} config={config} bg={{
+        <ParticlesBg type="circle" num={10} config={config} bg={{
             backgroundColor: "black",
             position: "fixed"
             }} />
