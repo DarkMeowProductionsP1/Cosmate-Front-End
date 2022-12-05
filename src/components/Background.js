@@ -32,9 +32,10 @@ class Background extends Component {
     return (
       <>
         <div>...</div>
-        <ParticlesBg type="circle" num={10} config={config} bg={{
+        <ParticlesBg type="square" num={10} config={config} bg={{
             backgroundColor: "black",
-            position: "fixed"
+            position: "absolute",
+            height: "200vh"
             }} />
       </>
     )

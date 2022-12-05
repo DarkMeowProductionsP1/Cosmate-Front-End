@@ -14,8 +14,6 @@ const GridContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  align-content: center;
-  position: absolute;
 `
 
 const GridContainer2 = styled.div`
